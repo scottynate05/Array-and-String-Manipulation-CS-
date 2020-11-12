@@ -30,3 +30,13 @@
 
 # The maximum possible profit.
 
+def buyAndSellStock(prices):
+    i = 1
+    min_price = prices[0]
+    max_prof = float('-inf')
+    while i < len(prices):
+        profit = prices[i] - min_price
+        max_prof = profit if profit > max_prof else max_prof
+        min_price = prices[i] if prices[i] < min_price else min_price
+        i += 1
+    return max_prof if max_prof > 0 else 0
