@@ -19,3 +19,13 @@
 
 # The resulting string after replacing each of its characters.
 
+from string import ascii_letters
+
+def alphabeticShift(inputString):
+    new_str = ''
+    for i in inputString:
+        if i in ascii_letters:
+            new_str += ascii_letters[(ascii_letters.index(i) + 1) % len(ascii_letters)]
+        else:
+            new_str += i
+    return new_str.lower()    
